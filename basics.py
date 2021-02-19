@@ -45,3 +45,37 @@ s = [i*i for i in r]
 
 print(s)
 
+#################################################################
+
+def factorial(n):
+
+    #Number to calculate factorial of
+
+    if n < 1:
+        m = -n
+    else:
+        m=n
+
+    #The running total
+    total = 1
+
+    #Loop to do the multiplications
+
+    while m>1:
+        total = total * m
+        m =m-1
+
+    if n <1:
+        return -total
+    else:
+        return total
+
+
+#Test function
+n=-20
+
+#Calculate factorial on n
+
+print(f"The factorial of {n} is {factorial(n)}")
+
+
