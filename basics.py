@@ -62,7 +62,7 @@ def factorial(n):
     #Loop to do the multiplications
 
     while m>1:
-        total = total * m
+        total = total * m 
         m =m-1
 
     if n <1:
