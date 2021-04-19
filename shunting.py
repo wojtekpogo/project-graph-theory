@@ -49,7 +49,11 @@ def shunt(infix):
 
 
 
-                
+if __name__ == "__main__":
+    for infix in ["3+4*(2-1)","1+2+3+4+5+6", "(1+2)*(4*(6-7))"]:
+        print(f"infix:    {infix}")
+        print(f"postfix: {shunt(infix)}")
+        print()                
 
 
 
