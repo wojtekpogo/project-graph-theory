@@ -16,6 +16,7 @@ class State():
 
 
     # Whenever we're in the state, this function gives us the set containing this state and  also all of the states we can get to upon following the 'e' arrows
+    # It's recursive function, recursion ends when arrows are not Labelled
     def followEarrows(self):
         """The set of states that are gotten from following state"""
 
@@ -41,7 +42,7 @@ class NFA:
         self.start = start
         self.end = end
 
-    #match function
+    # Match function which relies on Follow E Arrows function
     def match(self, s):
         """Return True if and only if 's' is accepted by this NFA"""
 
@@ -53,7 +54,7 @@ class NFA:
             # Start with an empty set of current states.previous
             current = set()
             # Loop through the previous states
-            for p in previous:
+            for state in previous:
                 # Verify is there is a 'c' arrow in the state
                 if state.label == c:
                     # Add follow E arrows 
