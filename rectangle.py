@@ -27,6 +27,8 @@ r1.height = 20
 
 r2 = Rectangle(2,5)
 
+
+
 #print(r1.width)
 print(f"Area of r1 = {r1.height} x {r1.width} = {r1.area()}")
 print(f"Area of r2 = {r2.height} x {r2.width} = {r2.area()}")

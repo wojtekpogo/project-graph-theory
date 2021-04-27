@@ -1,18 +1,39 @@
-#Thompson's construction
-#G00375250
-#20/04/21 (a bit late, but beter late than never)
+# Thompson's construction
+# G00375250
+# 20/04/21 (a bit late, but beter late than never)
+# Updated on 27/04/21
+# Added match and follow E Arrows function
 
-#Every state is a single symbol arrow or 1 or 2 empty arrows
+# Every state is a single symbol arrow or 1 or 2 empty arrows
 """A state and its arrows in Thompson's construction."""
 class State():
 
-    #constructor
+    # Constructor
     def __init__(self,label,arrows,accept):
         self.label = label
         self.arrows = arrows
         self.accept = accept #true or false if its accept state
 
-#class represents whole NFA
+
+    # Whenever we're in the state, this function gives us the set containing this state and  also all of the states we can get to upon following the 'e' arrows
+    def followEarrows(self):
+        """The set of states that are gotten from following state"""
+
+        # Include this state in the returned set
+        states = {self}
+
+        # If the state has 'e' arrows or let's say the label is None
+        if self.label is None:
+            # Loop through this state's arrows
+            for state in self.arrows:
+                # Incorporate that state's 'e' arrows occurs in states
+                states=(states | state.followEarrows())
+
+        # Return the set of states
+        return states
+
+
+# Class represents whole NFA
 class NFA:
     """A non-deterministic finite automation."""
 
@@ -20,10 +41,15 @@ class NFA:
         self.start = start
         self.end = end
 
-    def match(s):
-        """Return True if and only if s is accepted by this NFA"""
+    #match function
+    def match(self, s):
+        """Return True if and only if 's' is accepted by this NFA"""
 
-#method that runs throuh postfix notation and turns it to NFA
+        
+
+        return True
+
+# Method that runs throuh postfix notation and turns it to NFA
 def re_to_nfa(postfix):
 
     stack = [] #list of nfas
@@ -121,9 +147,6 @@ def re_to_nfa(postfix):
         return None
     else:
         return stack[0] #there should be just 1 nfa on the stack at the end
-
-
-
 
 
 #unit tests

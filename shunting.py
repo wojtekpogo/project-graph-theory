@@ -26,7 +26,7 @@ def shunt(infix):
             postfix = postfix + c
         #when c is an operator
         elif c in {'+','-', '*','/'}:
-            while len(stack) > 0 and stack[-1] != '( ' and presedance[stack[-1]] > presedance[c]:
+            while len(stack) > 0 and stack[-1] != '(' and presedance[stack[-1]] > presedance[c]:
                 #move operator at the top of stack to output
                 postfix = postfix + stack[-1]
                 #removes operator, replaces stack with the last one removed
