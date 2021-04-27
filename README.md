@@ -25,7 +25,39 @@ Once you have created a directory, simply copy the link from the github repo, th
 ---
 # Algorithms Description
 
-description here
+### Shunting Yard Algorithm
+Invented by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) and named the **'shunting yard'** algorithm because its operation resembles that of a railroad shunting yard. There purpose of this algorithm is to convert **infix expression** into **postfix expressions**. It is a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))-based algorithm. This algorithm was later generalized to operator-precedence parsing. The input of this algorithm is divided into two parts: the output queue and the operator stack. [<sup>4</sup>]
+
+**Infix Expression** is a single letter, or an operator, proceeded by one infix string and followed by another infix string.
+
+**Postfix Expression** also known as Reverse Polish Notation ([RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation)) is a single letter or an operator, preceded by two postfix strings. Every postfix string longer than a single variable contains first and second operands followed by an operator.[<sup>3</sup>]
+
+To create Shuting Yard Algorithm we will need:
+* Stack for operators
+* Queue for output
+* Array or List of tokens
+
+Let's consider an input: **4 + 2 / (9 - 8) ^ 4 ^ 2** 
+
+| Symbols       | Action        | Stack | Output |
+| ------------- |:-------------:| :-----:|:------:|
+| 4             | '4' is added to output |  | 4 |
+| +      | pushed to the operator stack     |   + | 4 |
+| 2 | '2' is added to output      |    + | 4 2  |  
+| / | pushed to the operator stack | +/ | 4 2 |
+| ( | pushed to the operator stack | +/( | 4 2 |
+| 9 | '9' is added to output | +/( | 4 2 9 |
+| - | pushed to the operator stack | +/(- | 4 2 9 |
+| 8 | '8' is added to output | +/(- | 4 2 9 8 |
+| ) | Pop stack to output | +/ | 4 2 9 8 - |
+| ^ | pushed to the operator stack | +/^ | 4 2 9 8 -|
+| 4 | '4' is added to output | +/^ | 4 2 9 8 - 4 |
+| ^ | pushed to the operator stack | +/^^ | 4 2 9 8 - 4 |
+| 2 | '2' is added to output | +/^^| 4 2 9 8 - 4 2 |
+|   | Pop the whole stack |  | 4 2 9 8 - 4 2 ^ ^ / + |
+
+**Output:** 4 2 9 8 - 4 2 ^ ^ / +
+
 
 ---
 
@@ -49,6 +81,10 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal 
 <sup>2</sup>[Ken's Thompson quote](https://www.oreilly.com/library/view/introducing-regular-expressions/9781449338879/ch01.html)
 
 [formal languages](https://dzone.com/articles/back-basics-regular)
+
+<sup>3</sup>[Infix and Postfix Definition](https://studyalgorithms.com/theory/what-are-infix-postfix-and-prefix-expressions/#:~:text=An%20infix%20expression%20is%20a,)
+
+<sup>4</sup>[Shutning Yard Algorithm](https://www.javatpoint.com/shunting-yard-algorithm-in-java)
 
   
 
