@@ -99,12 +99,39 @@ The [Kleene star](https://en.wikipedia.org/wiki/Kleene_star) expression is conve
 
 
 
+
+
 ---
 
 # What is a Regular Expression?
 
 A regular expression also known as '**regex**' is a search pattern used for matching one or more characters within a string. It can match specific characters, [wildcards](https://en.wikipedia.org/wiki/Wildcard_character#:~:text=In%20regular%20expressions%2C%20the%20period,which%20matches%20any%20single%20character.&text=*%20it%20will%20match%20any%20number,known%20as%20the%20Kleene%20star.), and ranges of characters. 
 > “A regular expression is a pattern which specifies a set of strings of characters; it is said to match certain strings.” —**Ken Thompson** [<sup>1</sup>] [<sup>2</sup>]
+
+Some of the uses of Regular Expressions:
+* Find a list of phone numbers in a large text file
+* Check that a user-provided email address is valid
+* Verify that a password meets custom strength requirements
+* Locate all outgoing links in an HTML document
+
+Basic expression ```abcde```  will only match ```abcde```, but if we'll add the [quantifier](https://en.wikipedia.org/wiki/Generalized_quantifier) to it, then out expression will look like: ```a+bcde```, now it can match ```abcde```,```aabcde``` or ```aaaaaaabcde```. In other words, it will match any number of character ```a``` at the beggining of the expression (but at least one) and then the rest of the expression which is ```bcde```.
+
+#### Quantification
+
+
+
+| Quantifier       | Meaning        | Example | What it will match |
+| ------------- |:-------------:| :-----:|:------:|
+| Kleene Star (✱) | 0 or more occurrences | a✱b  | ab, b, aab, aaaaaab, aaab...and more |
+| +      |  1 or more occurrences     |   a+b | ab, aab, aaaaaaab, aab..and more |
+| ? | 0 or 1 occurrences   |  a?b |  ab, b  |  
+| {n,m} | at least *n* and maximum *m* occurrences | a{1,4}b | ab, aab, aaab, aaaab |
+| {n,} | at least *n* occurrences |  a{3,}b | aaab, aaaab aaaaab..and more |
+| {,n} | maximum *n* occurrences |  a{,3}b |  b, ab, aab, aaab |
+| {n} | *n* occurrences specificly | a{3}b |  aaab |
+
+
+
 
 # How do regular expressions differ across implementations?
 
@@ -113,6 +140,10 @@ answer here
 # Can all formal languages be encoded as regular expressions?
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal language consists of words whose letters are taken from an alphabet and are well-formed according to a specific set of rules. Regular expressions and nondeterministic finite automata are two representations of formal languages.
+
+Formal Languages can be also:
+
+*
 
 # Refereneces
 
