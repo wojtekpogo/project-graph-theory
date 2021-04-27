@@ -45,9 +45,24 @@ class NFA:
     def match(self, s):
         """Return True if and only if 's' is accepted by this NFA"""
 
-        
+        # List of previous staes
+        previous = self.start.followEarrows()
 
-        return True
+        # Loop through the string, each character at the time
+        for c in s:
+            # Start with an empty set of current states.previous
+            current = set()
+            # Loop through the previous states
+            for p in previous:
+                # Verify is there is a 'c' arrow in the state
+                if state.label == c:
+                    # Add follow E arrows 
+                    current = (current | state.arrows[0].followEarrows())
+            #Replace previous with current, regardless memory management
+            previous = current
+        # If the final state is in previous, then return True, otherwise, return False
+
+        return (self.end in previous)
 
 # Method that runs throuh postfix notation and turns it to NFA
 def re_to_nfa(postfix):
