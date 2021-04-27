@@ -64,12 +64,36 @@ Let's consider an input: **4 + 2 / (9 - 8) ^ 4 ^ 2**
 
 Invented by [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson). To put this in simple terms, this algorithm transforms regular expression into nondeterministic finite automaton ([NFA](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton)) [<sup>5</sup>]
 
-Most important thing to understand about this algorithm is the set of 5 rules.
+Most important thing to understand about this algorithm is the set of 5 rules.[<sup>6</sup>]
 
-#### Rule #1 An Empty Expression
+#### Rule 1 An Empty Expression
 An empty expression, for example ‘ ’ or ε, will be converted to:
 
-!(https://miro.medium.com/max/688/0*rRnvHFHEl6Z57Q6x)
+![rule1](https://user-images.githubusercontent.com/55446533/116317191-ebf65380-a7aa-11eb-8d15-0915fc1e79b5.png)
+
+#### Rule 2: A symbol
+A symbol is converted to:
+
+![rule2](https://user-images.githubusercontent.com/55446533/116317471-47284600-a7ab-11eb-972b-b14a79629558.png)
+
+#### Rule 3: Union expression
+A union expression a+b is converted to:
+
+![rule3](https://user-images.githubusercontent.com/55446533/116317605-78a11180-a7ab-11eb-80e8-d141453fc34d.png)
+
+#### Rule 4: Concatenation expression
+A concatenation expression ab or a?b is converted to:
+
+![rule4](https://user-images.githubusercontent.com/55446533/116317763-af772780-a7ab-11eb-852b-05e9dead9e06.png)
+
+![rule4a](https://user-images.githubusercontent.com/55446533/116317769-b1d98180-a7ab-11eb-8224-572cd20ca2b1.png)
+
+#### Rule 5: Kleene star expression
+The [Kleene star](https://en.wikipedia.org/wiki/Kleene_star) expression is converted to:
+
+![rule5](https://user-images.githubusercontent.com/55446533/116318039-1268be80-a7ac-11eb-9aa5-f78dd69269a8.png)
+
+
 
 
 
@@ -103,6 +127,8 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal 
 <sup>4</sup>[Shutning Yard Algorithm](https://www.javatpoint.com/shunting-yard-algorithm-in-java)
 
 <sup>5</sup>[Thompson's Construction definition](https://en.wikipedia.org/wiki/Thompson%27s_construction)
+
+<sup>6</sup> [Thompson's construction rules](https://medium.com/swlh/visualizing-thompsons-construction-algorithm-for-nfas-step-by-step-f92ef378581b)
 
   
 
