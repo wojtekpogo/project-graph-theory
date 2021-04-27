@@ -58,6 +58,22 @@ Let's consider an input: **4 + 2 / (9 - 8) ^ 4 ^ 2**
 
 **Output:** 4 2 9 8 - 4 2 ^ ^ / +
 
+---
+
+### Thompson's Constructions
+
+Invented by [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson). To put this in simple terms, this algorithm transforms regular expression into nondeterministic finite automaton ([NFA](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton)) [<sup>5</sup>]
+
+Most important thing to understand about this algorithm is the set of 5 rules.
+
+#### Rule #1 An Empty Expression
+An empty expression, for example ‘ ’ or ε, will be converted to:
+
+!(https://miro.medium.com/max/688/0*rRnvHFHEl6Z57Q6x)
+
+
+
+
 
 ---
 
@@ -72,7 +88,7 @@ answer here
 
 # Can all formal languages be encoded as regular expressions?
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal language consists of words whose letters are taken from an alphabet and are well-formed according to a specific set of rules.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal language consists of words whose letters are taken from an alphabet and are well-formed according to a specific set of rules. Regular expressions and nondeterministic finite automata are two representations of formal languages.
 
 # Refereneces
 
@@ -85,6 +101,8 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal 
 <sup>3</sup>[Infix and Postfix Definition](https://studyalgorithms.com/theory/what-are-infix-postfix-and-prefix-expressions/#:~:text=An%20infix%20expression%20is%20a,)
 
 <sup>4</sup>[Shutning Yard Algorithm](https://www.javatpoint.com/shunting-yard-algorithm-in-java)
+
+<sup>5</sup>[Thompson's Construction definition](https://en.wikipedia.org/wiki/Thompson%27s_construction)
 
   
 
