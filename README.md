@@ -37,6 +37,8 @@ To create Shuting Yard Algorithm we will need:
 * Queue for output
 * Array or List of tokens
 
+### Conversion
+
 Let's consider an input: **4 + 2 / (9 - 8) ^ 4 ^ 2** 
 
 | Symbols       | Action        | Stack | Output |
@@ -93,14 +95,6 @@ The [Kleene star](https://en.wikipedia.org/wiki/Kleene_star) expression is conve
 
 ![rule5](https://user-images.githubusercontent.com/55446533/116318039-1268be80-a7ac-11eb-9aa5-f78dd69269a8.png)
 
-
-
-
-
-
-
-
-
 ---
 
 # What is a Regular Expression?
@@ -108,13 +102,15 @@ The [Kleene star](https://en.wikipedia.org/wiki/Kleene_star) expression is conve
 A regular expression also known as '**regex**' is a search pattern used for matching one or more characters within a string. It can match specific characters, [wildcards](https://en.wikipedia.org/wiki/Wildcard_character#:~:text=In%20regular%20expressions%2C%20the%20period,which%20matches%20any%20single%20character.&text=*%20it%20will%20match%20any%20number,known%20as%20the%20Kleene%20star.), and ranges of characters. 
 > “A regular expression is a pattern which specifies a set of strings of characters; it is said to match certain strings.” —**Ken Thompson** [<sup>1</sup>] [<sup>2</sup>]
 
+They can be used to search, edit, or manipulate text and data.[<sup>7</sup>]
+
 Some of the uses of Regular Expressions:
 * Find a list of phone numbers in a large text file
 * Check that a user-provided email address is valid
 * Verify that a password meets custom strength requirements
 * Locate all outgoing links in an HTML document
 
-Basic expression ```abcde```  will only match ```abcde```, but if we'll add the [quantifier](https://en.wikipedia.org/wiki/Generalized_quantifier) to it, then out expression will look like: ```a+bcde```, now it can match ```abcde```,```aabcde``` or ```aaaaaaabcde```. In other words, it will match any number of character ```a``` at the beggining of the expression (but at least one) and then the rest of the expression which is ```bcde```.
+Basic expression ```abcde```  will only match ```abcde```, but if we'll add the [quantifier](https://en.wikipedia.org/wiki/Generalized_quantifier) to it, then our expression will look like: ```a+bcde```, now it can match ```abcde```,```aabcde``` or ```aaaaaaabcde```. In other words, it will match any number of character ```a``` at the beggining of the expression (but at least one) and then the rest of the expression which is ```bcde```.
 
 #### Quantification
 
@@ -122,7 +118,7 @@ Basic expression ```abcde```  will only match ```abcde```, but if we'll add the 
 
 | Quantifier       | Meaning        | Example | What it will match |
 | ------------- |:-------------:| :-----:|:------:|
-| Kleene Star (✱) | 0 or more occurrences | a✱b  | ab, b, aab, aaaaaab, aaab...and more |
+| [Kleene Star](https://en.wikipedia.org/wiki/Kleene_star#:~:text=In%20mathematical%20logic%20and%20computer,as%20the%20free%20monoid%20construction.) (✱) | 0 or more occurrences | a✱b  | ab, b, aab, aaaaaab, aaab...and more |
 | +      |  1 or more occurrences     |   a+b | ab, aab, aaaaaaab, aab..and more |
 | ? | 0 or 1 occurrences   |  a?b |  ab, b  |  
 | {n,m} | at least *n* and maximum *m* occurrences | a{1,4}b | ab, aab, aaab, aaaab |
@@ -160,6 +156,8 @@ Formal Languages can be also:
 <sup>5</sup>[Thompson's Construction definition](https://en.wikipedia.org/wiki/Thompson%27s_construction)
 
 <sup>6</sup> [Thompson's construction rules](https://medium.com/swlh/visualizing-thompsons-construction-algorithm-for-nfas-step-by-step-f92ef378581b)
+
+<sup>7</sup>[Regex definition](https://docs.oracle.com/javase/tutorial/essential/regex/)
 
   
 
