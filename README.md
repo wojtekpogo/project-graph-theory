@@ -140,6 +140,7 @@ Basic expression ```abcde```  will only match ```abcde```, but if we'll add the 
 
 #### Quantification
 
+Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found.
 
 
 | Quantifier       | Meaning        | Example | What it will match |
