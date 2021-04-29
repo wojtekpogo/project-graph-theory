@@ -199,8 +199,6 @@ Formal Languages can be also:
 
 <sup>2</sup>[Ken's Thompson quote](https://www.oreilly.com/library/view/introducing-regular-expressions/9781449338879/ch01.html)
 
-[formal languages](https://dzone.com/articles/back-basics-regular)
-
 <sup>3</sup>[Infix and Postfix Definition](https://studyalgorithms.com/theory/what-are-infix-postfix-and-prefix-expressions/#:~:text=An%20infix%20expression%20is%20a,)
 
 <sup>4</sup>[Shutning Yard Algorithm](https://www.javatpoint.com/shunting-yard-algorithm-in-java)
@@ -212,6 +210,8 @@ Formal Languages can be also:
 <sup>7</sup>[Regex definition](https://docs.oracle.com/javase/tutorial/essential/regex/)
 
 <sup>8</sup>[Regex implementation](http://www.softec.lu/site/RegularExpressions/RegularExpressionEngines)
+
+<sup>9</sup>[Formal languages](https://dzone.com/articles/back-basics-regular)
 
   
 
