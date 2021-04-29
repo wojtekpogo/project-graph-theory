@@ -157,7 +157,33 @@ Basic expression ```abcde```  will only match ```abcde```, but if we'll add the 
 
 # How do regular expressions differ across implementations?
 
-answer here
+Implementation of Regular Expressions is based on two main engines: DFA and NFA. All engines try to find the longest leftmost match of the pattern in the text. But what is  the longest leftmost may be different depending on the type of engines. The main differences that may vary are:
+* What will be matched
+* Syntax
+* Efficiency optimization
+
+#### NFA Engine
+
+The [Nondeterministic Finite Automaton](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton)
+is an expression driven algorithm. This makes the regular expression like a mini procedural-like language that control the way the engine will try/fail during a match. The engine will start at the beginning of the expression and try to match it against the beginning of the text. Until both matches, it will bumps-along and attempt to match the start of the regex at the next character in the text.
+When both starts to match, the engine will advance in the regex, and try to match the next part of it. If it have to make a choice in the regex, like with an alternation or an optional quantifier, it choose one of the alternative and remember the other(s) as well as the place in the text where the choice was made. If later in the processing, the match failed, and it have left some alternative unexplored, the engine will backtrack where the choice was made and try the other(s) alternative(s). If no more alternatives are available, the overall match fail and the engine moves to the next character.
+If the engine reach the end of the regex and everything has matched, it takes this expression has the successful match, and eventually drops all alternatives left behind without even exploring them. [<sup>8</sup>]
+
+### DFA Engine
+
+The [Deterministic Finite Automaton](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) is a text-driven algorithm. For each characters in the searched text, the DFA engine will look at it only once. To achieve that, it will maintains several on-going matches simultaneously during its progression. It will in fact tried all the possible alternative {in parrallel}, and will return the longest leftmost successful match. However, this method has few disadvantages:
+
+* We cannot control the way the expression return a match
+* Regex pre-compilation is longer and takes more memory
+* [Lookarounds](https://docs.microsoft.com/en-us/previous-versions/troubleshoot/winautomation/process-development-tips/text-manipulation/regex-lookarounds-tutorial) are impossible
+
+### Hybrid NFA/DFA
+
+DFA engine is extremely fast and some features of the NFA engine are also practical, an hybrid NFA/DFA engine try to combine the best features out of those engines.
+The only fully hybrid implementation available to date is the [Henry Spencer's](https://en.wikipedia.org/wiki/Henry_Spencer) engine used in Tcl which is a complete rewrite of its original implementation. The GNU egrep and awk one are just two separate engines which are choosen depending of the presence of NFA specific features.
+
+
+---
 
 # Can all formal languages be encoded as regular expressions?
 
@@ -184,6 +210,8 @@ Formal Languages can be also:
 <sup>6</sup> [Thompson's construction rules](https://medium.com/swlh/visualizing-thompsons-construction-algorithm-for-nfas-step-by-step-f92ef378581b)
 
 <sup>7</sup>[Regex definition](https://docs.oracle.com/javase/tutorial/essential/regex/)
+
+<sup>8</sup>[Regex implementation](http://www.softec.lu/site/RegularExpressions/RegularExpressionEngines)
 
   
 
