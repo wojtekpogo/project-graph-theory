@@ -22,6 +22,32 @@ Once you have created a directory, simply copy the link from the github repo, th
 
 ```git clone https://github.com/wojtekpogo/project-graph-theory.git```
 
+
+#### How to use
+
+Navigate to the directory with the project and execute following command
+
+```python3 reg.py --h``` 
+
+It will then show you help menu in the console
+
+![1](https://user-images.githubusercontent.com/55446533/116600433-36014580-a921-11eb-863b-4b3753d1e95a.PNG)
+
+
+#### Example
+
+```python3 reg.py --regex "a.b|b*" --file "/home/wojtekpogo/repo/project-graph-theory/myfile.txt"```
+
+![2](https://user-images.githubusercontent.com/55446533/116600691-7bbe0e00-a921-11eb-96ed-a805c14b1180.PNG)
+
+*--regex* specifies the regex you wish to use
+
+*--file* specify the path to the text file
+
+**Disclaimer**
+
+Depending on your Python version you may use ```python reg.py ``` instead of ```python3 reg.py```
+
 ---
 # Algorithms Description
 
