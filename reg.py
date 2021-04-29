@@ -1,8 +1,11 @@
 import shuntingre
 import thompson
 
-# a*: zero or more a's.
-# a+: one or more a's. i.e. aa*
+#with open('file.txt', 'r') as file:
+
+    # Read a line of file
+    # Check if it matches the regular expression
+
 
 if __name__ == "__main__":
     tests = [  ["(a.b|b*)",   ["ab", "b", "bb", "a"]]
