@@ -59,9 +59,9 @@ class NFA:
                 if state.label == c:
                     # Add follow E arrows 
                     current = (current | state.arrows[0].followEarrows())
-            #Replace previous with current, regardless memory management
+            #Replace previous with current, it has to do somethin with memory management
             previous = current
-        # If the final state is in previous, then return True, otherwise, return False
+        # If the final state is in previous, then return True, otherwise return False
 
         return (self.end in previous)
 

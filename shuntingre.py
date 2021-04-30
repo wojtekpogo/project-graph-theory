@@ -2,8 +2,9 @@
 # https://en.wikipedia.org/wiki/Shunting-yard_algorithm
 
 
-#notes to self
-#in the shunting yard algorithm you need a stack
+# Notes to self
+#in the shunting yard algorithm you need a stack for operators
+# We need to set up the presedance order (see below)
 
 def shunt(infix):
     """Convert infix expressions to postfix. """
@@ -46,22 +47,3 @@ def shunt(infix):
         postfix = postfix + stack[-1]
         stack = stack[:-1]
     return postfix
-
-
-
-                
-
-#unit tests
-if __name__ == "__main__":
-    for infix in ["a.(b.b)*.a"]:
-        print(f"infix:    {infix}")
-        print(f"postfix: {shunt(infix)}")
-        print()
-
-
-#infix = "3+4*(2-1)"
-#postfix = "3421-*+"
-
-#print(f"infix: {infix}")
-#print(f"shunt:  {shunt(infix)}")
-#print(f"postfix: {postfix}")

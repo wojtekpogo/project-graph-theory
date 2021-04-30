@@ -18,6 +18,7 @@ def get_arg_parser():
                            help='Full path to a text file')
 
     return argparser
+    
 
 # Get the arguments that are passed in while running the script
 def get_main_args(sys_argv):
