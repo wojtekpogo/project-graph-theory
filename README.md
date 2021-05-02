@@ -7,7 +7,7 @@
 ___
 
 # Project Description
-description here
+Program searches the text file using regular expression, it takes regex and a path file as a command line argument and outputs the lines of text that matches regular expression. For more information *see Instructions below*
 
 
 ---
