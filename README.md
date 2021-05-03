@@ -190,10 +190,16 @@ The only fully hybrid implementation available to date is the [Henry Spencer's](
 # Can all formal languages be encoded as regular expressions?
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Formal_language), formal language consists of words whose letters are taken from an alphabet and are well-formed according to a specific set of rules. Regular expressions and nondeterministic finite automata are two representations of formal languages.
+Formal languages are defined by two sets of rules:
+* Syntax: precise rules that tell you the symbols you are allowed to use and how
+to put them together into legal expressions.
+* Semantics: precise rules that tell you the meanings of the symbols and legal
+expressions.
 
-Formal Languages can be also:
+Regex has it use in different programming languages such as Python, Java, JavaScript. Every regular expression denotes a formal language, but a formal language is only regular if there is a regular expression denoting it.
 
-*
+---
+
 
 # Refereneces
 
@@ -214,6 +220,11 @@ Formal Languages can be also:
 <sup>8</sup>[Regex implementation](http://www.softec.lu/site/RegularExpressions/RegularExpressionEngines)
 
 <sup>9</sup>[Formal languages](https://dzone.com/articles/back-basics-regular)
+
+<sup>10</sup>[About Formal Languages](http://www.cs.ucc.ie/~dgb/courses/toc/handout7.pdf)
+
+<sup>11</sup>[Great resource about Regular expressions](https://www.regular-expressions.info/)
+
 
   
 
